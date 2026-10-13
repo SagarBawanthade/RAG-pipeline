@@ -1,0 +1,20 @@
+Pods
+A Pod is the smallest deployable unit in Kubernetes. It holds one or more containers that share the same network address and storage volumes. Pods are temporary: if a Pod dies, it is not repaired, it is replaced by a new one.
+
+CrashLoopBackOff
+CrashLoopBackOff means a container in a Pod starts, crashes, and is restarted again and again. The kubelet waits longer between each restart, starting at 10 seconds and doubling up to a maximum of 5 minutes. Common causes are an application error at startup, a wrong command or arguments, missing environment variables or config, a failing liveness probe, or running out of memory. To debug, run kubectl logs <pod> --previous to see the logs of the crashed container, and kubectl describe pod <pod> to see events and the last exit code.
+
+ImagePullBackOff
+ImagePullBackOff means Kubernetes cannot download the container image. Typical reasons are a typo in the image name, a tag that does not exist, or missing credentials for a private registry. Fix it by checking the image name and tag, and by creating an image pull secret for private registries.
+
+OOMKilled
+When a container uses more memory than its memory limit, the kernel kills it and Kubernetes reports OOMKilled with exit code 137. The fix is to raise the memory limit or reduce the memory use of the application.
+
+Deployments
+A Deployment manages a set of identical Pods through a ReplicaSet. It keeps the desired number of replicas running and supports rolling updates, which replace Pods gradually so the app stays available. If an update goes wrong, you can roll back with kubectl rollout undo deployment/<name>. You can watch progress with kubectl rollout status deployment/<name>.
+
+Services
+A Service gives a group of Pods a stable IP address and DNS name, because Pod IPs change whenever Pods are replaced. ClusterIP is reachable only inside the cluster. NodePort opens a port on every node. LoadBalancer asks the cloud provider to create an external load balancer.
+
+Probes
+Kubernetes uses three kinds of probes. A liveness probe checks if the container is still healthy and restarts it if not. A readiness probe checks if the container is ready to receive traffic, and removes it from the Service endpoints if not. A startup probe gives slow-starting applications extra time before the other probes begin.

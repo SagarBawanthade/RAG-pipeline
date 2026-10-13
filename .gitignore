@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# ChromaDB generated database
+chroma_db/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
