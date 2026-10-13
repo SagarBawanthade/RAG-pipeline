@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the smallest deployable unit in Kubernetes?",
+    "expected_answer": "A Pod is the smallest deployable unit in Kubernetes.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "Why does my container keep restarting repeatedly?",
+    "expected_answer": "CrashLoopBackOff occurs when a container repeatedly starts, crashes, and gets restarted.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "How can I debug a container that keeps crashing?",
+    "expected_answer": "Use kubectl logs <pod> --previous and kubectl describe pod <pod> to inspect logs and events.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "Why can't Kubernetes download my container image?",
+    "expected_answer": "ImagePullBackOff can result from an incorrect image name, a nonexistent tag, or missing private registry credentials.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "What does OOMKilled mean?",
+    "expected_answer": "The container exceeded its memory limit and was killed by the kernel.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "How do I undo a failed Deployment update?",
+    "expected_answer": "Run kubectl rollout undo deployment/<name>.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "How can I check whether a Deployment rollout has completed?",
+    "expected_answer": "Run kubectl rollout status deployment/<name>.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "Why do Kubernetes Pods need a Service?",
+    "expected_answer": "A Service provides a stable IP address and DNS name because Pod IP addresses can change.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "Which Service type is accessible only inside the cluster?",
+    "expected_answer": "ClusterIP is reachable only inside the cluster.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "What is the difference between liveness and readiness probes?",
+    "expected_answer": "A liveness probe can trigger a container restart, while a readiness probe controls whether the Pod receives traffic.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "What does a startup probe do?",
+    "expected_answer": "A startup probe gives slow-starting applications extra time before other probes begin.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "What is a ReplicaSet used for?",
+    "expected_answer": "A Deployment manages Pods through a ReplicaSet and maintains the desired number of replicas.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "How can I expose an application through a cloud load balancer?",
+    "expected_answer": "Use a Service of type LoadBalancer to request an external load balancer from the cloud provider.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "What is the maximum delay between CrashLoopBackOff restarts?",
+    "expected_answer": "The restart backoff delay increases up to a maximum of five minutes.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "What does exit code 137 indicate in the OOMKilled context?",
+    "expected_answer": "It indicates the container was killed after exceeding its memory limit.",
+    "expected_source": "k8s_notes.txt"
+  },
+  {
+    "question": "How do I configure HTTPS for a Kubernetes Ingress?",
+    "expected_answer": "The provided document does not explain how to configure HTTPS for an Ingress.",
+    "expected_source": null
+  },
+  {
+    "question": "How do I install a Kubernetes cluster on Fedora?",
+    "expected_answer": "The provided document does not explain how to install a Kubernetes cluster on Fedora.",
+    "expected_source": null
+  },
+  {
+    "question": "How can I configure autoscaling based on CPU usage?",
+    "expected_answer": "The provided document does not explain how to configure CPU-based autoscaling.",
+    "expected_source": null
+  },
+  {
+    "question": "How do I create a Kubernetes PersistentVolume?",
+    "expected_answer": "The provided document does not explain how to create a PersistentVolume.",
+    "expected_source": null
+  },
+  {
+    "question": "How do I configure a Kubernetes NetworkPolicy?",
+    "expected_answer": "The provided document does not explain how to configure a NetworkPolicy.",
+    "expected_source": null
+  }
+]
