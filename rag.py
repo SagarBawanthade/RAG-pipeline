@@ -5,6 +5,7 @@ import requests
 import sys
 import chromadb
 
+# Imports for the RAG
 
 OLLAMA_URL = "http://localhost:11434"
 EMBED_MODEL = "nomic-embed-text"
